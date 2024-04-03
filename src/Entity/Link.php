@@ -19,6 +19,9 @@ class Link
     #[ORM\Column(length: 255)]
     private ?string $short = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $accessed = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Link
     public function setShort(string $short): static
     {
         $this->short = $short;
+
+        return $this;
+    }
+
+    public function getAccessed(): ?int
+    {
+        return $this->accessed;
+    }
+
+    public function setAccessed(?int $accessed): static
+    {
+        $this->accessed = $accessed;
 
         return $this;
     }

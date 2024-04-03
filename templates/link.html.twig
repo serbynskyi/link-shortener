@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Create Link</h1>
+    {{ form_start(linkForm) }}
+        {{ form_widget(linkForm) }}
+        <button type="submit">Create</button>
+    {{ form_end(linkForm) }}
+    <br>
+    {% if shortLink %}
+        <a href="{{ shortLink }}">{{ shortLink }}</a>
+    {% endif %}
+{% endblock %}
